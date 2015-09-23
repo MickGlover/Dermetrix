@@ -1,7 +1,13 @@
 <resources>
-    <string name="app_name">Hello World</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Dermetrix App name</string>
+    <string name="Dermetrix">Dermetrix dd</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_tracking">Tracking</string>
+    <string name="title_activity_take_picture">TakePicture</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_photo_roll">PhotoRoll</string>
+    <string name="title_activity_calendar">Calendar</string>
+    <string name="title_activity_reminders">Reminders</string>
+    <string name="title_activity_find_treatment">FindTreatment</string>
 </resources>

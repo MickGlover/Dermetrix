@@ -10,37 +10,66 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tracker"
+        android:text="Graph"
         android:id="@+id/button"
-        android:onClick="sendMessage"
-        android:layout_marginBottom="87dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:onClick="goToTrackingActivity"
+        android:layout_alignTop="@+id/button4"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignStart="@+id/button5" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Take \npicture"
         android:id="@+id/button2"
-        android:onClick="dispatchTakePictureIntent"
-        android:layout_above="@+id/button"
-        android:layout_alignParentLeft="true" />
+        android:onClick="goToTakePictureActivity"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignStart="@+id/button5" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Find\n Treatment"
         android:id="@+id/button3"
-        android:layout_above="@+id/button2"
-        android:layout_alignParentLeft="true" />
+        android:onClick="goToFindTreatmentActivity"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/button6"
+        android:layout_alignEnd="@+id/button6" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button4"
-        android:text="About"
-        android:layout_above="@+id/button3"
-        android:layout_alignParentLeft="true" />
+        android:onClick="goToRemindersActivity"
+        android:text="Reminders"
+        android:layout_marginTop="76dp"
+        android:layout_below="@+id/button6"
+        android:layout_alignLeft="@+id/button6"
+        android:layout_alignStart="@+id/button6" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera \n Roll"
+        android:id="@+id/button5"
+        android:onClick="goToPhotoRollActivity"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calender"
+        android:id="@+id/button6"
+        android:onClick="goToCalendarActivity"
+        android:layout_alignTop="@+id/button5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="45dp"
+        android:layout_marginEnd="45dp" />
 
 </RelativeLayout>

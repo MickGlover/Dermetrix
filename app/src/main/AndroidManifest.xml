@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.mick.Dermetrix.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,8 +17,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.mick.Dermetrix.Tracking"
+            android:name=".Tracking"
             android:label="@string/title_activity_tracking" >
+        </activity>
+        <activity
+            android:name=".TakePicture"
+            android:label="@string/title_activity_take_picture" >
+        </activity>
+        <activity
+            android:name=".PhotoRoll"
+            android:label="@string/title_activity_photo_roll" >
+        </activity>
+        <activity
+            android:name=".Calendar"
+            android:label="@string/title_activity_calendar" >
+        </activity>
+        <activity
+            android:name=".Reminders"
+            android:label="@string/title_activity_reminders" >
+        </activity>
+        <activity
+            android:name=".FindTreatment"
+            android:label="@string/title_activity_find_treatment" >
         </activity>
     </application>
 
