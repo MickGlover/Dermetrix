@@ -10,4 +10,5 @@
     <string name="title_activity_calendar">Calendar</string>
     <string name="title_activity_reminders">Reminders</string>
     <string name="title_activity_find_treatment">FindTreatment</string>
+    <string name="title_activity_specific_photo">specific_photo</string>
 </resources>
