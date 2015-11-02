@@ -80,7 +80,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Tracking.class);
         startActivity(intent);
     }
-
+    public void goToSpecificPhoto(View view) {
+        Intent intent = new Intent(this, Reminders.class);
+        startActivity(intent);
+    }
 
 
 }
