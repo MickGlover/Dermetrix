@@ -10,10 +10,14 @@
     <string name="title_activity_calendar">Calendar</string>
     <string name="title_activity_reminders">Reminders</string>
     <string name="title_activity_find_treatment">FindTreatment</string>
+<<<<<<< HEAD
     <string name="title_activity_database_example">DatabaseExample</string>
     <string name="title_activity_take_selfie">TakeSelfie</string>
     <string name="title_activity_Details_Activity">Details</string>
     <string name="AcneTrac">AcneTrac</string>
     <string name="title_activity_classification">Classification</string>
     <string name="title_activity_maps">Find Treatment</string>
+=======
+    <string name="title_activity_specific_photo">specific_photo</string>
+>>>>>>> origin/master
 </resources>

@@ -87,6 +87,11 @@
             android:name=".Tracking"
             android:label="@string/title_activity_tracking" >
         </activity>
+        <activity
+            android:name="com.example.mick.helloworld.specific_photo"
+            android:label="@string/title_activity_specific_photo"
+            android:theme="@style/AppTheme" >
+        </activity>
     </application>
 
 </manifest>

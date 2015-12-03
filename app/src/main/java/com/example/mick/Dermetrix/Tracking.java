@@ -1,6 +1,10 @@
 package com.example.mick.Dermetrix;
 
 import android.content.Intent;
+<<<<<<< HEAD
+=======
+import android.support.v7.app.AppCompatActivity;
+>>>>>>> origin/master
 import android.os.Bundle;
 import android.provider.BaseColumns;
 //import android.support.design.widget.FloatingActionButton;
@@ -10,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.mick.Dermetrix.R;
 import com.jjoe64.graphview.GraphView;
@@ -26,6 +31,7 @@ public class Tracking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking);
 
+<<<<<<< HEAD
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
         // generate Dates
@@ -60,6 +66,11 @@ public class Tracking extends AppCompatActivity {
         graph.getViewport().setXAxisBoundsManual(true);
         graph.addSeries(series);
 
+=======
+    public void goToCalendarActivity(View view) {
+        Intent intent = new Intent(this, Calendar.class);
+        startActivity(intent);
+>>>>>>> origin/master
     }
 
 }
