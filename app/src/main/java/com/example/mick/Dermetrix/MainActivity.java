@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void goToFindTreatmentActivity(View view) {
-        Intent intent = new Intent(this, FindTreatment.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
     public void goToPhotoRollActivity(View view) {
@@ -73,14 +73,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void goToTakePictureActivity(View view) {
-        Intent intent = new Intent(this, TakePicture.class);
+        Intent intent = new Intent(this, TakeSelfie.class);
         startActivity(intent);
     }
     public void goToTrackingActivity(View view) {
         Intent intent = new Intent(this, Tracking.class);
         startActivity(intent);
     }
-
+    public void goToSpecificPhoto(View view) {
+        Intent intent = new Intent(this, Reminders.class);
+        startActivity(intent);
+    }
 
 
 }

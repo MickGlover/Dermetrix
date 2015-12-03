@@ -1,11 +1,16 @@
 package com.example.mick.Dermetrix;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.example.mick.Dermetrix.R;
+
+import java.util.Date;
 
 public class Calendar extends AppCompatActivity {
 
@@ -36,4 +41,6 @@ public class Calendar extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
