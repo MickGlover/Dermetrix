@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.mick.Dermetrix.Classification">
+
+    <LinearLayout android:layout_weight="4"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
+    </LinearLayout>
+    <HorizontalScrollView android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/scrollView">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/score0"
+                android:onClick="choose0"
+                android:background="@drawable/score0"
+                android:layout_margin="10dp"
+                android:clickable="true"/>
+
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/score1"
+                android:onClick="choose1"
+                android:background="@drawable/score1"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:clickable="true"/>
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/score2"
+                android:onClick="choose2"
+                android:background="@drawable/score2"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:clickable="true"/>
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/score3"
+                android:onClick="choose3"
+                android:background="@drawable/score3"
+                android:layout_gravity="bottom"
+                android:layout_margin="10dp"
+                android:clickable="true"/>
+
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/score4"
+                android:onClick="choose4"
+                android:background="@drawable/score4"
+                android:layout_margin="10dp"
+                android:clickable="true"/>
+
+
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/score5"
+                android:onClick="choose5"
+                android:background="@drawable/score5"
+                android:layout_margin="10dp"
+                android:clickable="true"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/icon"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/scrollView"
+        android:id="@+id/arrowIcon" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/arrowIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/textView2"
+        android:id="@+id/MyImageView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:id="@+id/button7"
+        android:layout_alignBottom="@+id/arrowIcon"
+        android:layout_toRightOf="@+id/arrowIcon"
+        android:layout_toEndOf="@+id/arrowIcon" />
+
+
+</RelativeLayout>
