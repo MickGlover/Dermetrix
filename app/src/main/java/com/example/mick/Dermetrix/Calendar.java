@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.example.mick.Dermetrix.R;
@@ -40,6 +41,11 @@ public class Calendar extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void dropTable(View view){
+        OurDatabase mydb = new OurDatabase(this);
+        mydb.resetData();
     }
 
 

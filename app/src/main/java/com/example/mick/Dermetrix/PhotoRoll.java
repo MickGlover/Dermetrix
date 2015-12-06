@@ -38,9 +38,9 @@ public class PhotoRoll extends ActionBarActivity {
                 //Create intent
                 Intent intent = new Intent(PhotoRoll.this, DetailsActivity.class);
                 intent.putExtra("imagePath", item.getImagePath());
-                intent.putExtra("score", item.getScore());
+                intent.putExtra("score", Integer.toString(item.getScore()));
                 intent.putExtra("date", item.getDate());
-                intent.putExtra("tagArray", item.getTagArray());
+                intent.putExtra("tagArray", MyFunctions.serialize(item.getTagArray()));
                 //Start details activity
                 startActivity(intent);
             }

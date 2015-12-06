@@ -49,10 +49,10 @@ public class DatabaseExample extends AppCompatActivity {
         int intID = Integer.parseInt(selectedID.getText().toString()); //Converts ID to integer from whatever EditText is.
 
         //The following are used to get individual data
-        Date d = null;
+        String d = null;
         try {
             d = mydb.getDate(intID);
-        } catch (ParseException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         int score = mydb.getScore(intID);

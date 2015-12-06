@@ -14,17 +14,12 @@ public class DetailsActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details_activity);
 
-        String title = getIntent().getStringExtra("title");
+        String score = getIntent().getStringExtra("score");
         String imagePath = getIntent().getStringExtra("imagePath");
-
+        String date = getIntent().getStringExtra("date");
+        String tagArray = getIntent().getStringExtra("tagArray");
         //need to add the date and rating data right here
 
-        TextView titleTextView = (TextView) findViewById(R.id.title);
-        try {
-            titleTextView.setText(title);
-        } catch (Exception e){
-            //nothing to do
-        }
 
         //I think this is where we can add the date and rating value to the image
         //also we can add text to the image here maybe? I'm not sure how to create a text input though
@@ -32,5 +27,11 @@ public class DetailsActivity extends ActionBarActivity {
         ImageView imageView = (ImageView) findViewById(R.id.MyImageView);
         Bitmap newestBitmap = BitmapFactory.decodeFile(imagePath);
         imageView.setImageBitmap(newestBitmap);
+
+        TextView textViewScore = (TextView) findViewById(R.id.TextViewScore);
+        textViewScore.setText("Score:  " + score);
+
+        TextView textViewDate = (TextView) findViewById(R.id.TextViewDate);
+        textViewDate.setText("Date:  " + date);
     }
 }

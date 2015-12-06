@@ -7,44 +7,10 @@
     tools:context="com.example.mick.Dermetrix.Tracking"
     android:backgroundTint="#aa0e35">
 
-<<<<<<< HEAD
     <com.jjoe64.graphview.GraphView
         android:layout_width="match_parent"
+        android:layout_centerVertical="true"
         android:layout_height="200dip"
         android:id="@+id/graph" />
-=======
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Days"
-        android:id="@+id/button7"
-        android:background="#000000"
-        android:onClick="goToCalendarActivity"
-        android:layout_alignTop="@+id/button8"
-        android:layout_toLeftOf="@+id/button9"
-        android:layout_toStartOf="@+id/button9" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Months"
-        android:id="@+id/button8"
-        android:background="#010000"
-        android:layout_marginBottom="84dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/button9"
-        android:layout_toEndOf="@+id/button9"
-        android:onClick="goToCalendarActivity" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Weeks"
-        android:id="@+id/button9"
-        android:background="#010000"
-        android:layout_alignTop="@+id/button7"
-        android:layout_centerHorizontal="true"
-        android:onClick="goToCalendarActivity" />
->>>>>>> origin/master
 
 </RelativeLayout>

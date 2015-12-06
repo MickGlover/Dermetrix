@@ -1,10 +1,8 @@
 package com.example.mick.Dermetrix;
 
 import android.content.Intent;
-<<<<<<< HEAD
-=======
+
 import android.support.v7.app.AppCompatActivity;
->>>>>>> origin/master
 import android.os.Bundle;
 import android.provider.BaseColumns;
 //import android.support.design.widget.FloatingActionButton;
@@ -30,9 +28,6 @@ public class Tracking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking);
-
-<<<<<<< HEAD
-
         GraphView graph = (GraphView) findViewById(R.id.graph);
         // generate Dates
 
@@ -40,25 +35,26 @@ public class Tracking extends AppCompatActivity {
 // this will convert the Date to double via Date#getTime()
         OurDatabase mydb = new OurDatabase(this);
         int score;
-        Date date,d1 = null,d2 = null;
+        Date date;
+        Date d1 = null;
+        Date d2 = null;
         DataPoint[] data = new DataPoint[mydb.getNumOfRows()];
         int i = 1;
-        while (i < mydb.getNumOfRows()) {
+        while (i <= mydb.getNumOfRows()) {
             try {
-                if(i==1) d1= mydb.getDate(i);
-                if(i==mydb.getNumOfRows()) d2 = mydb.getDate(i);
-                date = mydb.getDate(i);
+                if(i==1) d1 = new Date(mydb.getDate(i));
+                if(i==mydb.getNumOfRows()) d2 = new Date(mydb.getDate(i));
+                date = new Date(mydb.getDate(i));
                 score = mydb.getScore(i);
-                data[i] = (new DataPoint(date, score));
+                data[i-1] = (new DataPoint(date, score));
             } catch (Exception parseException){}
             i++;
         }
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(data);
         graph.addSeries(series);
-
 // set date label formatter
         graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(this));
-        graph.getGridLabelRenderer().setNumHorizontalLabels(7); // only 4 because of the space
+        graph.getGridLabelRenderer().setNumHorizontalLabels(4); // only 4 because of the space
 
 // set manual x bounds to have nice steps
         graph.getViewport().setMinX(d1.getTime());
@@ -66,11 +62,7 @@ public class Tracking extends AppCompatActivity {
         graph.getViewport().setXAxisBoundsManual(true);
         graph.addSeries(series);
 
-=======
-    public void goToCalendarActivity(View view) {
-        Intent intent = new Intent(this, Calendar.class);
-        startActivity(intent);
->>>>>>> origin/master
+
     }
 
 }

@@ -115,7 +115,8 @@
         android:id="@+id/button7"
         android:layout_alignBottom="@+id/arrowIcon"
         android:layout_toRightOf="@+id/arrowIcon"
-        android:layout_toEndOf="@+id/arrowIcon" />
+        android:layout_toEndOf="@+id/arrowIcon"
+        android:onClick="saveData" />
 
 
 </RelativeLayout>

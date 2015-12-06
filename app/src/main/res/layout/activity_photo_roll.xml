@@ -3,7 +3,6 @@
     android:layout_height="match_parent"
     android:background="@android:color/background_dark">
 
-<<<<<<< HEAD
     <GridView
         android:id="@+id/gridView"
         android:layout_width="fill_parent"
@@ -17,14 +16,5 @@
         android:verticalSpacing="5dp"
         android:focusable="true"
         android:clickable="true"/>
+
 </RelativeLayout>
-=======
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PHOTO"
-        android:id="@+id/button10"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-</RelativeLayout>
->>>>>>> origin/master

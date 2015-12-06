@@ -57,23 +57,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToCalendarActivity(View view) {
-        Intent intent = new Intent(this, Calendar.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, Calendar.class);
+        //startActivity(intent);
     }
     public void goToFindTreatmentActivity(View view) {
-        Intent intent = new Intent(this, MapsActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, MapsActivity.class);
+        //startActivity(intent);
     }
     public void goToPhotoRollActivity(View view) {
         Intent intent = new Intent(this, PhotoRoll.class);
         startActivity(intent);
     }
     public void goToRemindersActivity(View view) {
-        Intent intent = new Intent(this, Reminders.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, Reminders.class);
+        //startActivity(intent);
     }
     public void goToTakePictureActivity(View view) {
-        Intent intent = new Intent(this, TakeSelfie.class);
+        Intent intent = new Intent(this, Classification.class);
         startActivity(intent);
     }
     public void goToTrackingActivity(View view) {
