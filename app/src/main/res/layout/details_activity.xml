@@ -31,4 +31,5 @@
         android:layout_gravity="bottom"
         android:id="@+id/TextViewTags"
         android:textColor="@color/white"/>
+
 </FrameLayout>

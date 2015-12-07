@@ -1,6 +1,7 @@
 package com.example.mick.Dermetrix;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,12 +27,15 @@ import java.util.Date;
 
 public class Classification extends AppCompatActivity {
     private int score;
+    private int percentRed;
     private String newImagePath;
-
+    private SharedPreferences mPrefs;
+    private int generatedScore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classification);
+        mPrefs = getSharedPreferences("bias", 0);
 
         dispatchTakePictureIntent();
     }
@@ -72,6 +77,8 @@ public class Classification extends AppCompatActivity {
         ImageView mImageView5 = (ImageView) findViewById(R.id.score5);
         mImageView5.getBackground().clearColorFilter();
         score = 0;
+        TextView text = (TextView) findViewById(R.id.textViewScore);
+        text.setText("Score: " + Integer.toString(score));
 
     }
 
@@ -89,6 +96,9 @@ public class Classification extends AppCompatActivity {
         ImageView mImageView5 = (ImageView) findViewById(R.id.score5);
         mImageView5.getBackground().clearColorFilter();
         score = 1;
+        TextView text = (TextView) findViewById(R.id.textViewScore);
+        text.setText("Score: " + Integer.toString(score));
+
     }
 
     public void choose2(View view){
@@ -105,6 +115,8 @@ public class Classification extends AppCompatActivity {
         ImageView mImageView5 = (ImageView) findViewById(R.id.score5);
         mImageView5.getBackground().clearColorFilter();
         score = 2;
+        TextView text = (TextView) findViewById(R.id.textViewScore);
+        text.setText("Score: " + Integer.toString(score));
 
     }
     public void choose3(View view){
@@ -121,6 +133,9 @@ public class Classification extends AppCompatActivity {
         ImageView mImageView5 = (ImageView) findViewById(R.id.score5);
         mImageView5.getBackground().clearColorFilter();
         score = 3;
+        TextView text = (TextView) findViewById(R.id.textViewScore);
+        text.setText("Score: " + Integer.toString(score));
+
     }
     public void choose4(View view){
         ImageView mImageView0 = (ImageView) findViewById(R.id.score0);
@@ -134,8 +149,11 @@ public class Classification extends AppCompatActivity {
         ImageView mImageView4 = (ImageView) findViewById(R.id.score4);
         mImageView4.getBackground().setColorFilter(Color.parseColor("#ffff00"), PorterDuff.Mode.MULTIPLY);
         ImageView mImageView5 = (ImageView) findViewById(R.id.score5);
-            mImageView5.getBackground().clearColorFilter();
+        mImageView5.getBackground().clearColorFilter();
         score = 4;
+        TextView text = (TextView) findViewById(R.id.textViewScore);
+        text.setText("Score: " + Integer.toString(score));
+
     }
     public void choose5(View view){
         ImageView mImageView0 = (ImageView) findViewById(R.id.score0);
@@ -151,6 +169,8 @@ public class Classification extends AppCompatActivity {
         ImageView mImageView5 = (ImageView) findViewById(R.id.score5);
         mImageView5.getBackground().setColorFilter(Color.parseColor("#ffff00"), PorterDuff.Mode.MULTIPLY);
         score = 5;
+        TextView text = (TextView) findViewById(R.id.textViewScore);
+        text.setText("Score: " + Integer.toString(score));
     }
 
     static final int REQUEST_TAKE_PHOTO = 1;
@@ -237,22 +257,23 @@ public class Classification extends AppCompatActivity {
                 blueCount += pixel & 0x000000ff;
             }
         }
-        float redPercent = (float)redCount/(float)(greenCount+blueCount+redCount);
-        TextView text = (TextView) findViewById(R.id.textView2);
-        text.setText(Float.toString(redPercent));
-        if(redPercent < .35){
+        float bias = mPrefs.getFloat("bias", 0);
+        float redPercent = bias + (float)redCount/(float)(greenCount+blueCount+redCount);
+
+
+        if(redPercent < .35 ){
             mImageView0.getBackground().setColorFilter(Color.parseColor("#ffff00"), PorterDuff.Mode.MULTIPLY);
             score = 0;
-        } else if(redPercent < .37){
+        } else if(redPercent < .365){
             mImageView1.getBackground().setColorFilter(Color.parseColor("#ffff00"), PorterDuff.Mode.MULTIPLY);
             score = 1;
-        } else if(redPercent < .39){
+        } else if(redPercent < .380){
             mImageView2.getBackground().setColorFilter(Color.parseColor("#ffff00"), PorterDuff.Mode.MULTIPLY);
             score = 2;
-        } else if(redPercent < .40){
+        } else if(redPercent < .395){
             mImageView3.getBackground().setColorFilter(Color.parseColor("#ffff00"), PorterDuff.Mode.MULTIPLY);
             score = 3;
-        } else if(redPercent < .42){
+        } else if(redPercent < .41){
             mImageView4.getBackground().setColorFilter(Color.parseColor("#ffff00"), PorterDuff.Mode.MULTIPLY);
             score = 4;
         } else {
@@ -260,12 +281,20 @@ public class Classification extends AppCompatActivity {
             score = 5;
         }
 
+        TextView text = (TextView) findViewById(R.id.textViewScore);
+        text.setText("Score: " + Integer.toString(score));
+        generatedScore = score;
     }
 
     public void saveData(View view){
         OurDatabase mydb = new OurDatabase(this);
-        String tags[] = {};
+        EditText note = (EditText) findViewById(R.id.editTextNote);
+        String tags[] = {note.getText().toString()};
         mydb.saveEntry(newImagePath, score, new Date().toString(),tags);
+        SharedPreferences.Editor mEditor = mPrefs.edit();
+        float bias = mPrefs.getFloat("bias", 0);
+        float newBias = (float) (bias + (score - generatedScore)*.015);
+        mEditor.putFloat("bias",newBias).commit();
         finish();
     }
 }

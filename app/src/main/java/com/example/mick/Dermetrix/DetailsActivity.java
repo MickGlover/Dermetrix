@@ -17,7 +17,7 @@ public class DetailsActivity extends ActionBarActivity {
         String score = getIntent().getStringExtra("score");
         String imagePath = getIntent().getStringExtra("imagePath");
         String date = getIntent().getStringExtra("date");
-        String tagArray = getIntent().getStringExtra("tagArray");
+        String tagArray[] = MyFunctions.deserialize(getIntent().getStringExtra("tagArray"));
         //need to add the date and rating data right here
 
 
@@ -28,10 +28,16 @@ public class DetailsActivity extends ActionBarActivity {
         Bitmap newestBitmap = BitmapFactory.decodeFile(imagePath);
         imageView.setImageBitmap(newestBitmap);
 
-        TextView textViewScore = (TextView) findViewById(R.id.TextViewScore);
-        textViewScore.setText("Score:  " + score);
 
         TextView textViewDate = (TextView) findViewById(R.id.TextViewDate);
         textViewDate.setText("Date:  " + date);
+
+        if(tagArray.length != 0){
+            TextView textViewTags = (TextView) findViewById(R.id.TextViewTags);
+            textViewTags.setText("Score:  " + score + "\n" + "Note:  " + tagArray[0]);
+        } else {
+            TextView textViewScore = (TextView) findViewById(R.id.TextViewScore);
+            textViewScore.setText("Score:  " + score);
+        }
     }
 }

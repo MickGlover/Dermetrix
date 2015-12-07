@@ -43,10 +43,6 @@ public class Calendar extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void dropTable(View view){
-        OurDatabase mydb = new OurDatabase(this);
-        mydb.resetData();
-    }
 
 
 }

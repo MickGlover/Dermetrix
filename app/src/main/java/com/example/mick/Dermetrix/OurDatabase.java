@@ -32,6 +32,8 @@ public class OurDatabase extends SQLiteOpenHelper {
         super(context, "Image Data", null, 1);
         SQLiteDatabase db = this.getReadableDatabase();
         db.execSQL("CREATE TABLE IF NOT EXISTS OURTABLE(ID INTEGER PRIMARY KEY AUTOINCREMENT, image VARCHAR, score INT , date VARCHAR, tags VARCHAR);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS CLASSIFIER(ID INTEGER PRIMARY KEY AUTOINCREMENT, image VARCHAR, score INT , date VARCHAR, tags VARCHAR);");
+
 
     }
 
